@@ -39,7 +39,7 @@ public class CourseInstanceController {
         List<CourseInstance> all = instanceRepository.findAll();
         List<CourseInstance> filtered = new ArrayList<>();
         for (CourseInstance i : all) {
-            if (i.getYear() == year && i.getSemester() == semester) {
+            if (i.getAcademicYear() == year && i.getSemester() == semester) {
                 filtered.add(i);
             }
         }
@@ -53,7 +53,7 @@ public class CourseInstanceController {
                                                @PathVariable String courseId) {
         List<CourseInstance> all = instanceRepository.findAll();
         for (CourseInstance i : all) {
-            if (i.getYear() == year && i.getSemester() == semester
+            if (i.getAcademicYear() == year && i.getSemester() == semester
                     && i.getCourse().getCourseId().equals(courseId)) {
                 return ResponseEntity.ok(i);
             }
@@ -68,7 +68,7 @@ public class CourseInstanceController {
                                             @PathVariable String courseId) {
         List<CourseInstance> all = instanceRepository.findAll();
         for (CourseInstance i : all) {
-            if (i.getYear() == year && i.getSemester() == semester
+            if (i.getAcademicYear() == year && i.getSemester() == semester
                     && i.getCourse().getCourseId().equals(courseId)) {
                 instanceRepository.delete(i);
                 return ResponseEntity.ok("Instance deleted successfully");

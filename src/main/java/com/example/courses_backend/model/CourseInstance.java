@@ -17,6 +17,6 @@ public class CourseInstance {
     @JoinColumn(name = "course_course_id")
     private Course course;
 
-    private int year;
+    private int academicYear;
     private int semester;
 }
