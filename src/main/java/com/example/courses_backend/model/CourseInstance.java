@@ -1,21 +1,22 @@
 package com.example.courses_backend.model;
+
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-    public class CourseInstance {
+@Entity
+public class CourseInstance {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        @ManyToOne
-        private Course course;
+    @ManyToOne
+    @JoinColumn(name = "course_course_id")
+    private Course course;
 
-        private int year;
-        private int semester;
-    }
-
+    private int year;
+    private int semester;
+}

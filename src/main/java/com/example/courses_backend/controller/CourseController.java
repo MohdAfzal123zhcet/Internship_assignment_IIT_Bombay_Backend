@@ -3,6 +3,7 @@ package com.example.courses_backend.controller;
 import com.example.courses_backend.model.Course;
 import com.example.courses_backend.repository.CourseRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class CourseController {
 
+    @Autowired
     private final CourseRepository courseRepository;
 
     //  Create a new course
@@ -46,7 +48,7 @@ public class CourseController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    //  Delete a course (only if not a prerequisite elsewhere)
+    // Delete a course (only if not a prerequisite elsewhere)
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCourse(@PathVariable String id) {
         Course course = courseRepository.findById(id).orElse(null);

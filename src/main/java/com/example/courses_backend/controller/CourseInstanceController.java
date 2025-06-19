@@ -5,6 +5,7 @@ import com.example.courses_backend.model.CourseInstance;
 import com.example.courses_backend.repository.CourseInstanceRepository;
 import com.example.courses_backend.repository.CourseRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +15,9 @@ import java.util.*;
 @RequestMapping("/api/instances")
 @RequiredArgsConstructor
 public class CourseInstanceController {
-
+    @Autowired
     private final CourseInstanceRepository instanceRepository;
+    @Autowired
     private final CourseRepository courseRepository;
 
     //  Create a course instance
