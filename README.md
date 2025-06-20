@@ -1,4 +1,4 @@
-#  Courses Backend (Spring Boot + H2 + Docker)
+#  Courses Backend (Spring Boot + PostgreSQL + Docker)
 
 This is the backend service for the Course Management System. It provides REST APIs for managing courses and course instances.
 
