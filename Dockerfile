@@ -1,14 +1,11 @@
-# Use Java 17 image
-FROM openjdk:17-jdk-slim
+# Dockerfile for Spring Boot backend using Java 21
+FROM eclipse-temurin:21-jdk-alpine
 
-# Set working directory
+# Set work directory
 WORKDIR /app
 
-# Copy your jar file into the container
-COPY target/courses-backend.jar app.jar
-
-# Expose port
-EXPOSE 8080
+# Copy the JAR file built from Maven
+COPY target/*.jar app.jar
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
