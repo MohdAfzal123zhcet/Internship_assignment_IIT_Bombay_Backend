@@ -64,3 +64,5 @@ mohdafzal123  is my user name on docker account
 
 docker push mohdafzal123/image-name
 
+# backend contains docker-compose.yaml file for pulling both frontend and backend and database
+
