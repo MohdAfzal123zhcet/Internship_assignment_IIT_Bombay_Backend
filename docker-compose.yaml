@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  backend:
+    image: mohdafzal123/courses-backend:latest
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:testDB
+    # No need for depends_on, no DB service
+
+  frontend:
+    image: mohdafzal123/courses-frontend:latest
+    ports:
+      - "5173:80"  # 80 inside container (nginx/Vite), exposed as 5173 outside
+    depends_on:
+      - backend
