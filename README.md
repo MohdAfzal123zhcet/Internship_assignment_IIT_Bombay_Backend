@@ -13,7 +13,7 @@ This is the backend service for the Course Management System. It provides REST A
 - Java 17
 - Spring Boot
 - Spring Data JPA
-- H2 In-Memory Database
+- PostgreSQL
 - Docker
 
 ---
